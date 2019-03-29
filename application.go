@@ -9,6 +9,14 @@ import (
 type Application struct {
 }
 
+func init() {
+	fmt.Println("init --->")
+}
+
+func (app *Application) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+	fmt.Println("hello")
+}
+
 func (app *Application) Start() {
 
 	fmt.Printf("Starting application on address `%s`\n", ":8080")
