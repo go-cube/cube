@@ -20,7 +20,7 @@ func App() *Application {
 		}
 
 		app = &Application{}
-		app.init(configFile)
+		app.initConfig(configFile)
 	}
 
 	return app

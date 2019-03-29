@@ -9,8 +9,9 @@ import (
 type Application struct {
 }
 
-func (app *Application) init(configFile string) {
+func (app *Application) initConfig(configFile string) {
 	fmt.Println("init --->")
+	fmt.Println(configFile)
 }
 
 func (app *Application) ServeHTTP(w http.ResponseWriter, req *http.Request) {
