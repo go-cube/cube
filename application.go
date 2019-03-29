@@ -9,7 +9,7 @@ import (
 type Application struct {
 }
 
-func init() {
+func (app *Application) init(configFile string) {
 	fmt.Println("init --->")
 }
 
