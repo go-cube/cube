@@ -1,4 +1,4 @@
-package koa
+package cube
 
 import (
 	"fmt"
@@ -14,8 +14,8 @@ func (app *Application) initConfig(configFile string) {
 	fmt.Println(configFile)
 }
 
-func (app *Application) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	fmt.Println("hello")
+func (app *Application) ServeHTTP(res http.ResponseWriter, req *http.Request) {
+	fmt.Println(req.URL)
 }
 
 func (app *Application) Start() {

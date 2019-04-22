@@ -1,6 +1,8 @@
-package koa
+package cube
 
-import "os"
+import (
+	"os"
+)
 
 var (
 	app *Application
