@@ -4,14 +4,22 @@ import (
 	"fmt"
 	"net/http"
 	"time"
+
+	"github.com/BurntSushi/toml"
 )
 
 type Application struct {
+	Conf *Conf
 }
 
 func (app *Application) initConfig(configFile string) {
+	app.Conf = &Conf{}
+	if _, err := toml.DecodeFile("./config/application.toml", &app.Conf.ApplicationConf); err != nil {
+		panic(err)
+	}
 	fmt.Println("init --->")
 	fmt.Println(configFile)
+	fmt.Println(app.Conf)
 }
 
 func (app *Application) ServeHTTP(res http.ResponseWriter, req *http.Request) {
